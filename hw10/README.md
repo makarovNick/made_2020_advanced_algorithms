@@ -1,7 +1,8 @@
 ## Usage:
 ```./parser -f "path/to/input_file" -o "path/to/output_file"```
 
-```$./parser
+```
+$./parser
 a = 10
 b = 2 + 10
 a = 10
