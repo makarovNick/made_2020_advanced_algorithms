@@ -1,3 +1,13 @@
+## Usage:
+```./parser -f "path/to/input_file" -o "path/to/output_file"```
+
+```$./parser
+a = 10
+b = 2 + 10
+a = 10
+b = 12
+```
+
 ## Граматика:
 Используемые обозначения : 
 
