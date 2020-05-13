@@ -1,0 +1,41 @@
+a = 2
+b = 3
+c = 2 * 5
+d = c - a
+d = d * d - (d + a + b) - ((c - d) * a)
+
+foo = 100
+bar = foo * 4 / 2 * foo
+
+if (foo - foo + 1)
+{
+    if (foo - foo)
+    {
+        z = 100
+        g = 100
+    }
+    else
+    {
+        z = 200
+        g = 200
+    }
+}
+else
+{
+    z = 200
+    g = 200
+}
+
+aaa = 1000
+lll = 100
+a = 10
+
+while(a)
+{
+    if (lll - 98)
+    {
+        zzz = 200
+    }
+
+    a = a - 2
+}
