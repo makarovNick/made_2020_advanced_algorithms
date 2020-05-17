@@ -20,11 +20,11 @@ Number = ```^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$  (double) ```
 ```
 O := Name | Number 
 
-E -> O | (E) | S
+E -> O | (E) | SUM
 
-S -> P | S + P | S - P
+SUM -> PROD | SUM + PROD | SUM - PROD
 
-P -> E | P * E | P / E
+PROD -> E | PROD * E | PROD / E
 
 C -> if (E) \n{\n S \n}\n | if (E) \n{\n S \n}\n else \n{\n S \n}\n 
 
