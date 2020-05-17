@@ -20,6 +20,42 @@ std::pair<std::string, std::string> split(const std::string& str)
     return std::make_pair(std::string(str.begin(), str.begin() + pos) , std::string(str.begin() + pos + 1, str.end()));
 }
 
+std::deque<Token> tokenize(std::string input)
+{
+    std::deque<Token> tokens;
+    for (int i = 0; i < input.size(); ++i)
+    {
+        if (!(isdigit(input[i]) || input[i] == '.' || input[i] == ','))
+        {
+            if (isspace(input[i]) && input[i] != '\n')
+            {
+                continue;
+            }
+            std::string temp;
+            temp.push_back(input[i]);
+            tokens.push_back(Token(temp));
+        }
+        else
+        {
+            std::deque<char> buffer;
+            while (isdigit(input[i]) || input[i] == '.' || input[i] == ',')
+            {
+                buffer.push_back(input[i]);
+                ++i;
+            }
+            i--;
+            std::string number;
+            for (int j = 0; j < buffer.size(); ++j)
+            {
+                number.push_back(buffer[j]);
+            }
+            tokens.push_back(Token(number));
+        }
+    }
+    tokens.push_back(Token("end"));
+    return tokens;
+}
+
 std::string remove_spaces(const std::string& str)
 {
     std::string res;
