@@ -16,13 +16,15 @@ Name = ``` [a-zA-Z_] + ```
 
 Number = ```^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$  (double) ```
 
-Зарезервированные символы и имена : “if”, “else”, “while”, “\n{\n“, “\n}\n”, “(“, “)”, “+”, “-”, “/”, “=” 
+Зарезервированные символы и имена : “if”, “else”, “while”, “{“, “}”, “(“, “)”, “+”, “-”, “/”, “=” 
 ```
 O := Name | Number 
 
-OP := + | - | / | * 
+E -> O | (E) | SUM
 
-E -> O | (E) | E OP E 
+SUM -> PROD | SUM + PROD | SUM - PROD
+
+PROD -> E | PROD * E | PROD / E
 
 C -> if (E) \n{\n S \n}\n | if (E) \n{\n S \n}\n else \n{\n S \n}\n 
 
