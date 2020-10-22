@@ -70,43 +70,7 @@ std::vector<int> suffix_array(const std::string& txt)
     return sa;
 }
 
-std::vector<int> lcp_kasai(const std::string& txt, const std::vector<int>& suffixArr)
-{
-    int n = suffixArr.size();
 
-    std::vector<int> lcp(n);
-    std::vector<int> pos(n);
-    for (int i = 0; i < n; ++i)
-    {
-        pos[suffixArr[i]] = i;
-    }
-
-    int current_length = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        if (pos[i] == n - 1)
-        {
-            current_length = 0;
-        }
-        else
-        {
-            int j = suffixArr[pos[i] + 1];
-
-            while (i + current_length < n && j + current_length < n && txt[i + current_length] == txt[j + current_length])
-            {
-                current_length++;
-            }
-
-            lcp[pos[i]] = current_length;
-            if (current_length > 0)
-            {
-                current_length--;
-            }
-        }
-    }
-
-    return lcp;
-}
 
 int main()
 {

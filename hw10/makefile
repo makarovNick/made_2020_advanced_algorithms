@@ -16,7 +16,7 @@ test : test.o parser.o lexer.o
 main.o: ${SRC_PACKAGE}/main.cpp $(INCLUDE_PACKAGE)/cxxopts.hpp
 	$(CC) -c ${SRC_PACKAGE}/main.cpp $(INCLUDE_PACKAGE)/cxxopts.hpp
 
-parser.o : ${SRC_PACKAGE}/parser.cpp $(INCLUDE_PACKAGE)/parser.h
+parser.o : ${SRC_PACKAGE}/parser.cpp $(INCLUDE_git PACKAGE)/parser.h
 	$(CC) -c ${SRC_PACKAGE}/parser.cpp $(INCLUDE_PACKAGE)/parser.h
 
 lexer.o : ${SRC_PACKAGE}/lexer.cpp $(INCLUDE_PACKAGE)/lexer.h
